@@ -71,6 +71,10 @@ module WPDB
       self.translation.source_language_code.nil?
     end
     
+    def original
+      self.translation.original.post
+    end
+    
     def language_code
       self.translation.language_code
     end
