@@ -75,6 +75,10 @@ module WPDB
       self.translation.original.post
     end
     
+    def translated_posts
+      self.translation.other_translations.map(&:post)
+    end
+    
     def language_code
       self.translation.language_code
     end

@@ -7,5 +7,9 @@ module WPDB
     def original
       WPDB::Translation.where(trid: self.trid).where('source_language_code IS NULL').first
     end
+    
+    def other_translations
+      WPDB::Translation.where(trid: self.trid)
+    end
   end
 end
