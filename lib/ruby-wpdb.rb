@@ -47,6 +47,7 @@ module WPDB
       require_relative 'ruby-wpdb/option'
       require_relative 'ruby-wpdb/user'
       require_relative 'ruby-wpdb/usermeta'
+      require_relative 'ruby-wpdb/translation'
       require_relative 'ruby-wpdb/term'
       require_relative 'ruby-wpdb/term_relationship'
       require_relative 'ruby-wpdb/term_taxonomy'

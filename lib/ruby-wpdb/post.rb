@@ -12,6 +12,10 @@ module WPDB
     plugin :validation_helpers
     plugin :sluggable, source: :post_title, target: :post_name
 
+    one_to_one :translation,
+      key: :element_id,
+      class: 'WPDB::Translation'
+
     one_to_many :children,
       key: :post_parent,
       class: self do |ds|
@@ -62,5 +66,14 @@ module WPDB
       self.post_date_gmt  ||= Time.now.utc
       super
     end
+    
+    def original?
+      self.translation.source_language_code.nil?
+    end
+    
+    def language_code
+      self.translation.language_code
+    end
+    
   end
 end
